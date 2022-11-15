@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Beginners Guide to Bitcoin</title>
         <link rel="stylesheet" href="css/main.css" />
+        <script src="https://kit.fontawesome.com/e0e5482104.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav>
@@ -35,12 +36,27 @@
                 <br>
                 <p>Satoshi designed the blockchain's cryptographic foundation such that the validity of the chain can be easily verified by any user of the network, avoiding the need for any trusted central party (this has given rise to the popular motto "trust, don't verify" among bitcoin users).</p>
                 <br>
-                <p>To illustrate how Bitcoin actually keeps track of who has what, the classic hypothetical that's been used is a financial relationship between "Bob" and "Alice". Bob has some bitcoins, and wants to send a portion of his wealth to Alice on the Bitcoin network</p>
-                 <div id="handy-links" style="">
+                <p>To illustrate how Bitcoin actually keeps track of who has what, the classic hypothetical that's been used is a financial relationship between "Bob" and "Alice". Bob wants to send Alice some bitcoins, so Bob will ask Alice to send him a <strong>Bitcoin address</strong>, which is a string of 32 characters. While not technically accurate, a good conceptual analogy is that Alice's address and can be thought of as the identifier for a locker that Bob will put some money in for Alice. The locker has a slot which money can be inserted into, but the only way to access the money is with the <strong>private key</strong> for the locker - which Alice posseses.</p>
+                <br>
+                <p>This system of lockers and keys lets anyone deposit money into anybody's locker they would like, and only the person who has the key for the locker can retrieve that money. The lockers are completely self maintained - keys and addresses are not at all managed or validated by a central authority, but instead are generated with cryptographic algorithms built into Bitcoin - relying heavily on a technology from the 1970s known as <strong>public key cryptography</strong> (which is used in almost every data security application still today).</p>
+                <br>
+                <p>Of course, Bitcoin does not use physical lockers or keys. It uses complex digital signatures that users perform with their keys to verify they own the bitcoins that they are spending, together with the concept of <strong>proof of work</strong>: a technique that allows computers to declare the validity of data by expending energy towards the validation of that data (think of how gold, or any other precious material, is valuable in part due to the amount of effort that was spent obtaining it). The technical detail of how these disparate systems synergize to make Bitcoin work is quite complex and beyond the scope of this site.</p> 
+                <br>
+                <p>Some resources that offer much deeper technical explainations are:</p>
+                <br>
+                <a style="margin-bottom: 20px;" class="link-btn" href="https://www.youtube.com/watch?v=Lx9zgZCMqXE"" id="wp-link">How Bitcoin Works Under the Hood - CuriousInventor</a>
+                <a style="margin-bottom: 20px;" class="link-btn" href="https://github.com/bitcoinbook/bitcoinbook" id="wp-link">Mastering Bitcoin - Andreas Antonopoulos</a>
+                <p>Also, links to specific explanations of the mentioned technologies are below:</p>
+                <br>
+                <a style="margin-bottom: 20px;" class="link-btn" href="https://en.wikipedia.org/wiki/Public-key_cryptography" id="wp-link">Public key cryptography</a>
+                <a style="margin-bottom: 20px;" class="link-btn" href="https://en.wikipedia.org/wiki/Proof_of_work" id="wp-link">Proof of work</a>
+                <a style="margin-bottom: 20px;" class="link-btn" href="https://en.wikipedia.org/wiki/Blockchain" id="wp-link">Blockchain</a>
+
+                <div id="handy-links" style="border-top: 1px solid var(--btc-orange); padding-top: 20px;">
                     <a class="link-btn handy-link" href="index.html">Bitcoin overview</a>
                     <br>
-                    <a class="link-btn handy-link" href="how-it-works.html">How Bitcoin works under the hood</a>
-                    <br>
+                    <a class="link-btn handy-link" href="history.html">Bitcoin's origin story</a>
+                    <br>    
                     <a class="link-btn handy-link" href="benefits.html">The potential benefits Bitcoin offers society</h4></a>
                     <br>
                     <a class="link-btn handy-link" href="criticisms.html">The potential harms Bitcoin has on society</a>
