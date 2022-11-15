@@ -152,7 +152,8 @@ main > .container {
     left: -27.5px;
     top: 0;
     bottom: 0;
-    background-color: var(--btc-orange);
+    background-color: white;
+    border: 5px solid var(--btc-orange);
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -169,4 +170,8 @@ main > .container {
 #wp-link {
     background-color: var(--btc-orange);
     color: white;
+}
+
+#hiw-vid-container {
+    text-align: center;
 }
