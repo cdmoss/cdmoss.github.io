@@ -28,13 +28,13 @@
             <div class="container">
                 <h3 align="center">Overview, and the Blockchain</h3>
                 <br>
-                <p>Bitcoin, at the highest level, is a public ledger that records transactions between members of the network. There aren't actually any "coins" persay, as the name implies, instead the network keeps track of who owns what through an unbroken chain of "blocks" of transactions at are linked together cryptographically in chronological order - called the blockchain.</p>
+                <p>Bitcoin, at the highest level, is a public ledger that records transactions between members of the network. There aren't actually any "coins" persay, as the name implies, instead the network keeps track of who owns what through an unbroken chain of "blocks" of transactions at are linked together cryptographically in chronological order and can be verified by any user of the network - a brand new innovation by Satoshi now referred to as a blockchain.</p>
                 <br>
                 <div id="hiw-vid-container">
                     <iframe width="420" height="315" src="https://www.youtube.com/watch?v=SSo_EIwHSd4"></iframe> 
                 </div>
                 <br>
-                <p>Satoshi designed the blockchain's cryptographic foundation such that the validity of the chain can be easily verified by any user of the network, avoiding the need for any trusted central party (this has given rise to the popular motto "trust, don't verify" among bitcoin users).</p>
+                <p>The blockchain's property of being verifiable by any user of the network is what allows Bitcoin to avoid the need for any trusted central party (this has given rise to the popular motto "trust, don't verify" among bitcoin users). Furthermore, Satoshi introduced another key property in the design: absolute scarcity. The Bitcoin software is hard-programmed to only ever produce ~21 million bitcoins (and each Bitcoin can be further divided into 100,000,000 units called satoshis). Since bitcoin is open source, this can be changed of course. But a change to the coin limit would cause the new version of Bitcoin to be backwards incompatible and cause a <strong>hard fork:</strong> an entirely new chain of transactions that can not interact with the original chain. This has actually been done a few times: the 2 most prominent forks are <strong>Bitcoin Cash</strong> and <strong>Bitcoin SV</strong>, both of which have large differences that make them incompatible with Bitcoin - they also both have a much smaller userbase than the original Bitcoin.</p>
                 <br>
                 <p>To illustrate how Bitcoin actually keeps track of who has what, the classic hypothetical that's been used is a financial relationship between "Bob" and "Alice". Bob wants to send Alice some bitcoins, so Bob will ask Alice to send him a <strong>Bitcoin address</strong>, which is a string of 32 characters. While not technically accurate, a good conceptual analogy is that Alice's address and can be thought of as the identifier for a locker that Bob will put some money in for Alice. The locker has a slot which money can be inserted into, but the only way to access the money is with the <strong>private key</strong> for the locker - which Alice posseses.</p>
                 <br>
@@ -42,11 +42,11 @@
                 <br>
                 <p>Of course, Bitcoin does not use physical lockers or keys. It uses complex digital signatures that users perform with their keys to verify they own the bitcoins that they are spending, together with the concept of <strong>proof of work</strong>: a technique that allows computers to declare the validity of data by expending energy towards the validation of that data (think of how gold, or any other precious material, is valuable in part due to the amount of effort that was spent obtaining it). The technical detail of how these disparate systems synergize to make Bitcoin work is quite complex and beyond the scope of this site.</p> 
                 <br>
-                <p>Some resources that offer much deeper technical explainations are:</p>
+                <h3 align="center">Some resources that offer much deeper technical explainations are:</p>
                 <br>
                 <a style="margin-bottom: 20px;" class="link-btn" href="https://www.youtube.com/watch?v=Lx9zgZCMqXE"" id="wp-link">How Bitcoin Works Under the Hood - CuriousInventor</a>
                 <a style="margin-bottom: 20px;" class="link-btn" href="https://github.com/bitcoinbook/bitcoinbook" id="wp-link">Mastering Bitcoin - Andreas Antonopoulos</a>
-                <p>Also, links to specific explanations of the mentioned technologies are below:</p>
+                <h3 align="center">Also, links to specific explanations of the mentioned technologies are below:</h3>
                 <br>
                 <a style="margin-bottom: 20px;" class="link-btn" href="https://en.wikipedia.org/wiki/Public-key_cryptography" id="wp-link">Public key cryptography</a>
                 <a style="margin-bottom: 20px;" class="link-btn" href="https://en.wikipedia.org/wiki/Proof_of_work" id="wp-link">Proof of work</a>
