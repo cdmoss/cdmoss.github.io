@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+    
+</head>
+<body>
+    <header>
+        <i id="toggle-menu" class="fa-solid fa-bars fa-xl"></i>
+        <p>electronic chip playground!</p>
+        <i id="toggle-chip-desc" class="fa-solid fa-book-open fa-xl"></i>
+    </header>
+    <div id="menu">
+
+    </div>
+    <div id="chip-desc">
+
+    </div>
+    <div id="playground">
+        <div id="input-container">
+
+        </div>
+        <div id="chip-container">
+
+        </div>
+        <div id="light-container">
+            <img onclick="toggleLight()" class="light" id="light-off" src="img/lights/light-off.png"/>
+            <img onclick="toggleLight()" class="light" id="light-on" src="img/lights/light-on.png" />
+        </div>
+    </div>
+    <footer>
+        <i id="btn-prev" class="prog-btn fa-solid fa-chevron-left fa-2xl"></i>
+        <span id="chip-label">chip label here</span>
+        <i id="btn-next" class="prog-btn fa-solid fa-chevron-right fa-2xl"></i>
+    </footer>
+    <script src="https://kit.fontawesome.com/f938e4bcfd.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
