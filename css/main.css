@@ -2,6 +2,33 @@
     box-sizing: border-box;
 }
 
+i {
+    padding: 0;
+    margin: 0;
+}
+
+.modal {
+    width: fit-content !important;
+}
+
+.popover {
+    transform: none !important;
+    left: initial !important;
+    right: 60px !important;  
+    top: 15px !important;
+    will-change: none;
+}
+
+.modal-header {
+    align-items: center;
+}
+
+.modal-footer {
+    border-top: solid 1px black;
+    height: 10vh;
+    padding: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -14,6 +41,12 @@ img {
     max-width: 100%;
 }
 
+.input-button {
+    cursor: pointer;
+    height: 75px;
+    width: 75px;
+}
+
 header {
     height: 8vh;
     padding: 0px 25px;
@@ -23,23 +56,92 @@ header {
     border-bottom: 1px solid black;
 }
 
+.modal-header {
+    height: 8vh;   
+}
+
+#chip-menu .modal-dialog {
+    border-right: 1px solid black;
+}
+
+#chip-desc .modal-dialog {
+    border-left: 1px solid black;
+}
+
+#chip-menu .modal-footer {
+    justify-content: flex-start;
+}
+
+#chip-menu .modal-dialog {
+    justify-content: flex-end;
+}
+
+header {
+    background-color: black;
+    color: white;
+}
+
 header > i {
     cursor: pointer;
 }
 
+.gate-ul {
+    margin: 0;
+    padding: 0;
+}
+
+.gate-nav {
+    font-size: large;
+    list-style: none;
+    padding: 20px;
+    border-bottom: solid 1px lightgray;
+    cursor: pointer;
+}
+
+.gate-nav:hover, .gate-nav.active {
+    background-color: #ededed;
+}
+
+.modal-header {
+    border-bottom: solid 2px black;
+}
+
 #playground {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 82vh;
 }
 
-.light {
-    height: 150px;
+.fa-circle-info {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
 }
 
-#light-on {
-    display: none;
+#light, #gate {
+    height: 300px;
+}
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.input-wire-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.input-wire {
+    height: 150px;
+    width: 300px;
 }
 
 footer {
@@ -51,20 +153,21 @@ footer {
     border-top: 1px solid black;
     height: 10vh;
     align-items: center;
+    background-color: black;
+    color: white
 }
 
 .prog-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
     cursor: pointer;
 }
 
-#btn-prev {
+.btn-prev {
     padding-left: 25px;
 }
 
-#btn-next {
+.btn-next {
     padding-right: 25px;
 }

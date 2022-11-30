@@ -5,40 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-side-modals.css" />
     <link rel="stylesheet" href="css/main.css" />
     
 </head>
 <body>
     <header>
-        <i id="toggle-menu" class="fa-solid fa-bars fa-xl"></i>
-        <p>electronic chip playground!</p>
-        <i id="toggle-chip-desc" class="fa-solid fa-book-open fa-xl"></i>
+        <i data-toggle="modal" data-target="#chip-menu" data id="toggle-menu" class="fa-solid fa-bars fa-xl"></i>
+        <h3>electronic chip playground!</h3>
+        <i data-toggle="modal" data-target="#chip-desc" data id="toggle-menu" class="fa-solid fa-book-open fa-xl"></i>
     </header>
-    <div id="menu">
-
+    <div class="modal modal-left xs fade" data-backdrop="false" id="chip-menu">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">gate menu</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div>
+                    <ul class="gate-ul">
+                        <li class="gate-nav active" id="nav-0" onclick="selectChipByIndex(0)">not</li>
+                        <li class="gate-nav" id="nav-1" onclick="selectChipByIndex(1)">or</li>
+                        <li class="gate-nav" id="nav-2" onclick="selectChipByIndex(2)">nor</li>
+                        <li class="gate-nav" id="nav-3" onclick="selectChipByIndex(3)">and</li>
+                        <li class="gate-nav" id="nav-4" onclick="selectChipByIndex(4)">nand</li>
+                        <li class="gate-nav" id="nav-5" onclick="selectChipByIndex(5)">xor</li>
+                        <li class="gate-nav" id="nav-6" onclick="selectChipByIndex(6)">xnor</li>
+                    </ul>
+                </div>
+                <div class="modal-footer modal-footer-fixed">
+                    <i onclick="prevChip()" class="btn-prev prog-btn fa-solid fa-chevron-left fa-2xl"></i>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="chip-desc">
-
+    <div class="modal modal-right xs fade" data-backdrop="false" id="chip-desc">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="chip-desc-title">description</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="chip-desc-body">hello</p>
+                </div>
+                <div class="modal-footer modal-footer-fixed">
+                    <i onclick="nextChip()" class="btn-next prog-btn fa-solid fa-chevron-right fa-2xl"></i>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="playground">
+    <div id="playground" >
+        <div id="kb-shortcut-popover">
+            <a style="color: black;" role="button" data-placement="left" data-toggle="popover" title="Keyboard Shortcuts" data-content="Toggle inputs using the 1 and 2 keys. Switch chips using the arrow keys."><i class="fa-solid fa-circle-info fa-2xl"></i></a>
+        </div>
+        
         <div id="input-container">
-
+            <div class="input-wire-container">
+                <img onclick="toggleInput()" class="input-button" id="input-1" src="img/buttons/off-button.png" />
+                <img id="input-wire-1" class="input-wire" src="img/inputs/off-input-single.png"/>
+            </div>
+            <div class="input-wire-container">
+                <img onclick="toggleInput2()" class="input-button" id="input-2" src="img/buttons/off-button.png" />
+                <img id="input-wire-2" class="input-wire" src="img/inputs/off-input-single.png"/>
+            </div>
         </div>
-        <div id="chip-container">
-
-        </div>
-        <div id="light-container">
-            <img onclick="toggleLight()" class="light" id="light-off" src="img/lights/light-off.png"/>
-            <img onclick="toggleLight()" class="light" id="light-on" src="img/lights/light-on.png" />
-        </div>
+        <img id="gate" src="img/gates/notgate.png"/>
+        <img id="light" src="img/lights/light-off.png"/>
     </div>
     <footer>
-        <i id="btn-prev" class="prog-btn fa-solid fa-chevron-left fa-2xl"></i>
-        <span id="chip-label">chip label here</span>
-        <i id="btn-next" class="prog-btn fa-solid fa-chevron-right fa-2xl"></i>
+        <i onclick="prevChip()" class="btn-prev prog-btn fa-solid fa-chevron-left fa-2xl"></i>
+        <h5 id="chip-label">chip label here</h5>
+        <i onclick="nextChip()" class="btn-next prog-btn fa-solid fa-chevron-right fa-2xl"></i>
     </footer>
     <script src="https://kit.fontawesome.com/f938e4bcfd.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha512-ldc1sPu1FZ8smgkgp+HwnYyVb1eRn2wEmKrDg1JqPEb02+Ei4kNzDIQ0Uwh0AJVLQFjJoWwG+764x70zy5Tv4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
