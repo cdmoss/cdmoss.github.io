@@ -1,20 +1,3 @@
-$(".modal").on("show.bs.modal shown.bs.modal", function (e) {
-    // Remove overlay and enable scrolling of body
-    $("body").removeClass("modal-open").find(".modal-backdrop").remove();
-});
-
-$("#kb-shortcut-popover").find('a').popover({
-    container: '#kb-shortcut-popover',
-    placement: 'left',
-    popperConfig: {
-        modifiers: {
-            flip: {
-                enabled: false
-            }
-        }
-    }
-});
-
 let gateIndex = 0;
 let input1 = false;
 let input2 = false;
@@ -25,8 +8,6 @@ let inputWire2 = $("#input-wire-2");
 let gate = $("#gate");
 let lightEl = $("#light");
 let gateDesc = $("#gate-desc-body");
-
-
 
 const gateArray = [
     {
@@ -235,16 +216,38 @@ function toggleInput2() {
     currentgate.inputHandler();
 }
 
-$(document).bind("keydown", function (e) {
-    if (e.keyCode == 49) {
-        toggleInput1();
-    }
-    if (e.keyCode == 50) {
-        toggleInput2();
-    }
-    if (e.keyCode == 37 || e.keyCode == 38) prevgate();
-    if (e.keyCode == 39 || e.keyCode == 40) nextgate();
-    console.log(e.keyCode)
-})
+function initPage() {
+    $(".modal").on("show.bs.modal shown.bs.modal", function (e) {
+        $("body").removeClass("modal-open").find(".modal-backdrop").remove();
+    });
 
-updatePlayground();
+    $("#kb-shortcut-popover")
+        .find("a")
+        .popover({
+            container: "#kb-shortcut-popover",
+            placement: "left",
+            popperConfig: {
+                modifiers: {
+                    flip: {
+                        enabled: false,
+                    },
+                },
+            },
+        });
+
+    $(document).bind("keydown", function (e) {
+        if (e.keyCode == 49) {
+            toggleInput1();
+        }
+        if (e.keyCode == 50) {
+            toggleInput2();
+        }
+        if (e.keyCode == 37 || e.keyCode == 38) prevgate();
+        if (e.keyCode == 39 || e.keyCode == 40) nextgate();
+    });
+    updatePlayground();
+}
+
+initPage();
+
+
