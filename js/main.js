@@ -15,7 +15,7 @@ $("#kb-shortcut-popover").find('a').popover({
     }
 });
 
-let chipIndex = 0;
+let gateIndex = 0;
 let input1 = false;
 let input2 = false;
 let inputButton1 = $("#input-1");
@@ -24,11 +24,11 @@ let inputWire1 = $("#input-wire-1");
 let inputWire2 = $("#input-wire-2");
 let gate = $("#gate");
 let lightEl = $("#light");
-let chipDesc = $("#chip-desc-body");
+let gateDesc = $("#gate-desc-body");
 
 
 
-const chipArray = [
+const gateArray = [
     {
         label: "NOT",
         desc: "The NOT gate is the simplest gate: it simply inverts the input it is given.",
@@ -165,46 +165,46 @@ const chipArray = [
 ];
 
 
-let currentChip = chipArray[0];
+let currentgate = gateArray[0];
 
 function updatePlayground() {
-    gate.attr("src", currentChip.gate);
-    currentChip.init();
-    $("#chip-label, #chip-desc-title").html(currentChip.label);
-    $("#chip-desc-body").html(currentChip.desc);
+    gate.attr("src", currentgate.gate);
+    currentgate.init();
+    $("#gate-label, #gate-desc-title").html(currentgate.label);
+    $("#gate-desc-body").html(currentgate.desc);
 }
 
-function nextChip() {
-    $("#nav-" + chipIndex).removeClass("active");
-    if (chipIndex == chipArray.length - 1) {
-        chipIndex = 0;
+function nextgate() {
+    $("#nav-" + gateIndex).removeClass("active");
+    if (gateIndex == gateArray.length - 1) {
+        gateIndex = 0;
     } else {
-        chipIndex++;
+        gateIndex++;
     }
-    $("#nav-" + chipIndex).addClass("active");
+    $("#nav-" + gateIndex).addClass("active");
 
-    currentChip = chipArray[chipIndex];
+    currentgate = gateArray[gateIndex];
     updatePlayground();
 }
 
-function prevChip() {
-    $("#nav-" + chipIndex).removeClass("active");
+function prevgate() {
+    $("#nav-" + gateIndex).removeClass("active");
 
-    if (chipIndex == 0) {
-        chipIndex = chipArray.length - 1;
+    if (gateIndex == 0) {
+        gateIndex = gateArray.length - 1;
     } else {
-        chipIndex--;
+        gateIndex--;
     }
-    $("#nav-" + chipIndex).addClass("active");
-    console.log(chipIndex)
-    currentChip = chipArray[chipIndex];
+    $("#nav-" + gateIndex).addClass("active");
+    console.log(gateIndex)
+    currentgate = gateArray[gateIndex];
     updatePlayground();
 }
 
-function selectChipByIndex(i) {
-    $("#nav-" + chipIndex).removeClass("active");
-    chipIndex = i;
-    currentChip = chipArray[i];
+function selectgateByIndex(i) {
+    $("#nav-" + gateIndex).removeClass("active");
+    gateIndex = i;
+    currentgate = gateArray[i];
     updatePlayground();
     $("#nav-" + i).addClass("active");
 }
@@ -219,7 +219,7 @@ function toggleInput1() {
         : "img/inputs/off-input-single.png";
     inputWire1.attr("src", inputWireDisplay);
     inputButton1.attr("src", inputButtonDisplay);
-    currentChip.inputHandler();
+    currentgate.inputHandler();
 }
 
 function toggleInput2() {
@@ -232,7 +232,7 @@ function toggleInput2() {
         : "img/inputs/off-input-single.png";
     inputWire2.attr("src", inputWireDisplay);
     inputButton2.attr("src", inputButtonDisplay);
-    currentChip.inputHandler();
+    currentgate.inputHandler();
 }
 
 $(document).bind("keydown", function (e) {
@@ -242,8 +242,8 @@ $(document).bind("keydown", function (e) {
     if (e.keyCode == 50) {
         toggleInput2();
     }
-    if (e.keyCode == 37 || e.keyCode == 38) prevChip();
-    if (e.keyCode == 39 || e.keyCode == 40) nextChip();
+    if (e.keyCode == 37 || e.keyCode == 38) prevgate();
+    if (e.keyCode == 39 || e.keyCode == 40) nextgate();
     console.log(e.keyCode)
 })
 

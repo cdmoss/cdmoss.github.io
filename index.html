@@ -12,11 +12,11 @@
 </head>
 <body>
     <header>
-        <i data-toggle="modal" data-target="#chip-menu" data id="toggle-menu" class="fa-solid fa-bars fa-xl"></i>
-        <h3>electronic chip playground!</h3>
-        <i data-toggle="modal" data-target="#chip-desc" data id="toggle-menu" class="fa-solid fa-book-open fa-xl"></i>
+        <i data-toggle="modal" data-target="#gate-menu" data id="toggle-menu" class="fa-solid fa-bars fa-xl"></i>
+        <h3>electronic gate playground!</h3>
+        <i data-toggle="modal" data-target="#gate-desc" data id="toggle-menu" class="fa-solid fa-book-open fa-xl"></i>
     </header>
-    <div class="modal modal-left xs fade" data-backdrop="false" id="chip-menu">
+    <div class="modal modal-left xs fade" data-backdrop="false" id="gate-menu">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -27,42 +27,42 @@
                 </div>
                 <div>
                     <ul class="gate-ul">
-                        <li class="gate-nav active" id="nav-0" onclick="selectChipByIndex(0)">not</li>
-                        <li class="gate-nav" id="nav-1" onclick="selectChipByIndex(1)">or</li>
-                        <li class="gate-nav" id="nav-2" onclick="selectChipByIndex(2)">nor</li>
-                        <li class="gate-nav" id="nav-3" onclick="selectChipByIndex(3)">and</li>
-                        <li class="gate-nav" id="nav-4" onclick="selectChipByIndex(4)">nand</li>
-                        <li class="gate-nav" id="nav-5" onclick="selectChipByIndex(5)">xor</li>
-                        <li class="gate-nav" id="nav-6" onclick="selectChipByIndex(6)">xnor</li>
+                        <li class="gate-nav active" id="nav-0" onclick="selectgateByIndex(0)">not</li>
+                        <li class="gate-nav" id="nav-1" onclick="selectgateByIndex(1)">or</li>
+                        <li class="gate-nav" id="nav-2" onclick="selectgateByIndex(2)">nor</li>
+                        <li class="gate-nav" id="nav-3" onclick="selectgateByIndex(3)">and</li>
+                        <li class="gate-nav" id="nav-4" onclick="selectgateByIndex(4)">nand</li>
+                        <li class="gate-nav" id="nav-5" onclick="selectgateByIndex(5)">xor</li>
+                        <li class="gate-nav" id="nav-6" onclick="selectgateByIndex(6)">xnor</li>
                     </ul>
                 </div>
                 <div class="modal-footer modal-footer-fixed">
-                    <i onclick="prevChip()" class="btn-prev prog-btn fa-solid fa-chevron-left fa-2xl"></i>
+                    <i onclick="prevgate()" class="btn-prev prog-btn fa-solid fa-chevron-left fa-2xl"></i>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal modal-right xs fade" data-backdrop="false" id="chip-desc">
+    <div class="modal modal-right xs fade" data-backdrop="false" id="gate-desc">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="chip-desc-title">description</h4>
+                    <h4 class="modal-title" id="gate-desc-title">description</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p id="chip-desc-body">hello</p>
+                    <p id="gate-desc-body">hello</p>
                 </div>
                 <div class="modal-footer modal-footer-fixed">
-                    <i onclick="nextChip()" class="btn-next prog-btn fa-solid fa-chevron-right fa-2xl"></i>
+                    <i onclick="nextgate()" class="btn-next prog-btn fa-solid fa-chevron-right fa-2xl"></i>
                 </div>
             </div>
         </div>
     </div>
     <div id="playground" >
         <div id="kb-shortcut-popover">
-            <a style="color: black;" role="button" data-placement="left" data-toggle="popover" title="Keyboard Shortcuts" data-content="Toggle inputs using the 1 and 2 keys. Switch chips using the arrow keys."><i class="fa-solid fa-circle-info fa-2xl"></i></a>
+            <a style="color: black;" role="button" data-placement="left" data-toggle="popover" title="Keyboard Shortcuts" data-content="Toggle inputs using the 1 and 2 keys. Switch gates using the arrow keys."><i class="fa-solid fa-circle-info fa-2xl"></i></a>
         </div>
         
         <div id="input-container">
@@ -79,9 +79,9 @@
         <img id="light" src="img/lights/light-off.png"/>
     </div>
     <footer>
-        <i onclick="prevChip()" class="btn-prev prog-btn fa-solid fa-chevron-left fa-2xl"></i>
-        <h5 id="chip-label">chip label here</h5>
-        <i onclick="nextChip()" class="btn-next prog-btn fa-solid fa-chevron-right fa-2xl"></i>
+        <i onclick="prevgate()" class="btn-prev prog-btn fa-solid fa-chevron-left fa-2xl"></i>
+        <h5 id="gate-label">gate label here</h5>
+        <i onclick="nextgate()" class="btn-next prog-btn fa-solid fa-chevron-right fa-2xl"></i>
     </footer>
     <script src="https://kit.fontawesome.com/f938e4bcfd.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha512-ldc1sPu1FZ8smgkgp+HwnYyVb1eRn2wEmKrDg1JqPEb02+Ei4kNzDIQ0Uwh0AJVLQFjJoWwG+764x70zy5Tv4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

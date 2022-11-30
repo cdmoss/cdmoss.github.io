@@ -60,19 +60,19 @@ header {
     height: 8vh;   
 }
 
-#chip-menu .modal-dialog {
+#gate-menu .modal-dialog {
     border-right: 1px solid black;
 }
 
-#chip-desc .modal-dialog {
+#gate-desc .modal-dialog {
     border-left: 1px solid black;
 }
 
-#chip-menu .modal-footer {
+#gate-menu .modal-footer {
     justify-content: flex-start;
 }
 
-#chip-menu .modal-dialog {
+#gate-menu .modal-dialog {
     justify-content: flex-end;
 }
 
